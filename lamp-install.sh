@@ -18,12 +18,14 @@ ufw allow in "Apache Full"
 # Allow Read/Write for Owner
 chmod -R 0755 /var/www/html/
 
-# Create info.php for testing php processing
+# delete default page of apache
 rm /var/www/html/index.html
 
 # copy app to apache2 
 cp index.html insert.php /var/www/html/
 
-#mysql
+#mysql configuration
 mysql -e "create database demo; CREATE USER 'user'@'localhost' IDENTIFIED BY 'abc'; GRANT ALL PRIVILEGES ON demo.* TO 'user'@'localhost' IDENTIFIED BY 'abc'; use demo; CREATE TABLE persons (first_name varchar(20), last_name varchar(20), email varchar(20) ); "
 
+#setup finish
+echo please open browser and put ip address to access to page  
